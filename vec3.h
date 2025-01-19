@@ -31,10 +31,10 @@ public:
         return *this;
     }
 
-    vec3& operator*=(double factor){
-        ele[0] *= factor;
-        ele[1] *= factor;
-        ele[2] *= factor;
+    vec3& operator*=(double scalar){
+        ele[0] *= scalar;
+        ele[1] *= scalar;
+        ele[2] *= scalar;
         return *this;
     }
 
@@ -47,7 +47,7 @@ public:
         return ele[0] * ele[0] + ele[1] * ele[1] + ele[2] * ele[2];
     }
 
-    double get_length() const {
+    double get_magnitude() const {
         return std::sqrt(length_squared());
     }
 };
@@ -101,7 +101,7 @@ inline vec3 cross(const vec3& a , const vec3& b){
 }
 
 inline vec3 unit_vector(const vec3 v){
-    return v / v.get_length();
+    return v / v.get_magnitude();
 }
 
 #endif
